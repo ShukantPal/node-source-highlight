@@ -1,0 +1,23 @@
+{
+  "name": "source-highlight",
+  "version": "1.0.0",
+  "description": "Bindings for the GNU source-highlight library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "libsource-highlight",
+    "source-highlight",
+    "srchilite"
+  ],
+  "author": "Shukant K. Pal <shukantpal@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-addon-api": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^15.6.1",
+    "node-gyp": "^8.1.0"
+  }
+}

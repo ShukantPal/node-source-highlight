@@ -11,7 +11,8 @@
             ],
             "dependencies": ["<!(node -p \"require('node-addon-api').gyp\")"],
             'cflags!': [ '-fno-exceptions' ],
-            'cflags_cc!': [ '-fno-exceptions', '-frtti' ],
+            'cflags_cc!': [ '-fno-exceptions', '-fno-rtti' ],
+            "cflags_cc": ["-frtti"],
             "link_settings": {
                 "libraries": [
                     "-lsource-highlight"
@@ -23,12 +24,16 @@
                 "MACOSX_DEPLOYMENT_TARGET": "10.7"
             },
             'conditions': [
-              ['OS=="mac"', {
-                  'cflags+': ['-fvisibility=hidden'],
-                  'xcode_settings': {
-                    'GCC_SYMBOLS_PRIVATE_EXTERN': 'YES', # -fvisibility=hidden
-                  }
-              }]
+                ['OS=="mac"', {
+                    'cflags+': ['-fvisibility=hidden'],
+                    'xcode_settings': {
+                        "GCC_ENABLE_CPP_EXCEPTIONS": "YES",
+                        "GCC_ENABLE_CPP_RTTI": "YES",
+                        "CLANG_CXX_LIBRARY": "libc++",
+                        "MACOSX_DEPLOYMENT_TARGET": "10.7",
+                        'GCC_SYMBOLS_PRIVATE_EXTERN': 'YES' # -fvisibility=hidden
+                    }
+                }]
             ]
         }
     ]
