@@ -7,14 +7,16 @@
 #include <srchilite/sourcehighlight.h>
 #include <sstream>
 
-SourceHighlight::SourceHighlight(const Napi::CallbackInfo& callbackInfo) :
-    Napi::ObjectWrap<SourceHighlight>(callbackInfo) {}
+SourceHighlight::SourceHighlight(const Napi::CallbackInfo& info) :
+    Napi::ObjectWrap<SourceHighlight>(info),
+    instance(info.Length() < 1 ? "" : (std::string) info[0].As<Napi::String>()) {}
 
 Napi::Object SourceHighlight::Init(Napi::Env env, Napi::Object exports) {
     Napi::Function func = DefineClass(env, "SourceHighlight", {
         InstanceMethod("initialize", &SourceHighlight::initialize),
         InstanceMethod("highlight", &SourceHighlight::highlight),
         InstanceMethod("checkLangDef", &SourceHighlight::checkLangDef),
+        InstanceMethod("checkOutLangDef", &SourceHighlight::checkOutLangDef),
         InstanceMethod("setDataDir", &SourceHighlight::setDataDir),
         InstanceMethod("setStyleFile", &SourceHighlight::setStyleFile),
         InstanceMethod("setStyleCssFile", &SourceHighlight::setStyleCssFile),
@@ -148,6 +150,7 @@ Napi::Value SourceHighlight::checkOutLangDef(const Napi::CallbackInfo& info) {
         this->instance.checkOutLangDef(outLangDef);
     } catch (const std::exception e) {
         Napi::Error::New(info.Env(), std::string(e.what())).ThrowAsJavaScriptException();
+        return Napi::Value();
     }
 
     return info.Env().Undefined();
