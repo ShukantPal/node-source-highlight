@@ -3,19 +3,19 @@
  */
 
 declare class SourceHighlight {
-  initialize(): void;
-  checkLangDef(langFile: string): void;
-  checkOutLangDef(outLangDef: string): boolean;
-  highlight(input: string, output: string, inputLang: string): void;
-  highlight(input: Buffer, inputLang: string, inputFileName: string): Buffer;
-  setDataDir(dataDir: string): void;
-  setStyleFile(styleFile: string): void;
-  setStyleCssFile(cssFile: string): void;
-  setStyleDefaultFile(styleDefaultFile: string): void;
-  setTitle(title: string): void;
-  setInputLang(inputLang: string): void;
-  setCss(css: string): void;
-  setHeaderFileName(h: string): void;
-  setFooterFileName(f: string): void;
-  setOutputDir(outputDir: string): void;
+    initialize(): void;
+    checkLangDef(langFile: string): void;
+    checkOutLangDef(outLangDef: string): boolean;
+    highlight(input: string, output: string, inputLang: string): void;
+    highlight(input: Buffer, inputLang: string, inputFileName: string): Buffer;
+    setDataDir(dataDir: string): void;
+    setStyleFile(styleFile: string): void;
+    setStyleCssFile(cssFile: string): void;
+    setStyleDefaultFile(styleDefaultFile: string): void;
+    setTitle(title: string): void;
+    setInputLang(inputLang: string): void;
+    setCss(css: string): void;
+    setHeaderFileName(h: string): void;
+    setFooterFileName(f: string): void;
+    setOutputDir(outputDir: string): void;
 }
