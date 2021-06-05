@@ -1,6 +1,6 @@
 # node-source-highlight
 
-[GNU source-highlight] is a library to highlight source code in several different languages and output
+[GNU source-highlight](https://www.gnu.org/software/src-highlite/) is a library to highlight source code in several different languages and output
 formats. This package provides Node.js bindings to the C++ library; currently, it requires you to have
 the library preinstalled.
 
