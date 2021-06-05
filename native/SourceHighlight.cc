@@ -128,7 +128,6 @@ Napi::Value SourceHighlight::checkLangDef(const Napi::CallbackInfo& info) {
         error.Set("filename", Napi::Value::From(env, e.filename));
         error.ThrowAsJavaScriptException();
     } catch (const std::exception& e) {
-    std::cout << typeid(e).name();
         Napi::Error::New(env, std::string(e.what())).ThrowAsJavaScriptException();
     }
 

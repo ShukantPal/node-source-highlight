@@ -2,6 +2,12 @@
   "name": "source-highlight",
   "version": "1.0.0",
   "description": "Bindings for the GNU source-highlight library",
+  "files": [
+    "native",
+    "binding.gyp",
+    "index.d.ts",
+    "index.js"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
