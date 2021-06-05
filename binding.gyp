@@ -5,9 +5,7 @@
             "sources": ["native/SourceHighlight.cc"],
             "dependencies": [],
             "include_dirs": [
-                "<!@(node -p \"require('node-addon-api').include_dir\")",
-                "/usr/local/include/boost",
-                "./deps/source-highlight/lib"
+                "<!@(node -p \"require('node-addon-api').include_dir\")"
             ],
             "dependencies": ["<!(node -p \"require('node-addon-api').gyp\")"],
             'cflags!': [ '-fno-exceptions' ],

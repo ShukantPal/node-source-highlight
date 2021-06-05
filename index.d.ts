@@ -19,6 +19,7 @@ declare module 'source-highlight' {
         public highlight(input: Buffer, inputLang: string, inputFileName: string): Buffer;
         public setDataDir(dataDir: string): void;
         public setStyleFile(styleFile: string): void;
+        public setStyleCssFile(cssFile: string): void;
         public setStyleDefaultFile(styleDefaultFile: string): void;
         public setTitle(title: string): void;
         public setInputLang(inputLang: string): void;
