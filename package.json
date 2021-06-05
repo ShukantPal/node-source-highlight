@@ -6,13 +6,13 @@
     "native",
     "binding.gyp",
     "index.d.ts",
-    "index.js"
+    "index.js",
+    "index.js.flow"
   ],
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "install": "node-gyp rebuild",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install": "node-gyp rebuild"
   },
   "keywords": [
     "libsource-highlight",
