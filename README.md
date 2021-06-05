@@ -10,6 +10,24 @@ the library preinstalled.
 npm install --save source-highlight
 ```
 
+## Example
+
+```javascript
+// Load the source code into a UTF-8 buffer
+const input = Buffer.from(`
+  console.log('Hello world!');
+`);
+
+// Create the SourceHighlight instance. "esc.outlang" will output colored characters to the console. You can
+// use "html.outlang" too.
+const sourceHighlight = new SourceHighlight('esc.outlang');
+
+// Highlight the source code.
+const output = sourceHighlight.highlight(input, 'javascript.lang', '').toString();
+
+console.log(output);
+```
+
 ## API Documentation - SourceHighlight
 
 ```typescript
